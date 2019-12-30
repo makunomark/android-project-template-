@@ -8,7 +8,7 @@ I have disabled Google App Indexing, for really no reason. If you'd like to allo
 
 2. Content backup:
 This template has `fullBackupContent` set to true (enabled). In case you would like for your application not to be backed up, please make the following update 
-``` 
+```diff
 - android:fullBackupContent="false"
 + android:fullBackupContent="true"
 ``` 
