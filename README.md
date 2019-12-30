@@ -14,5 +14,5 @@ This template has `fullBackupContent` set to true (enabled). In case you would l
 ``` 
 
 ### To Do
-[ ] Set up Dagger, and Document
-[ ] Set up MVVM, and Document
+- [ ] Set up Dagger, and Document
+- [ ] Set up MVVM, and Document
