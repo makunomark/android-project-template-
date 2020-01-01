@@ -12,7 +12,14 @@ This template has `fullBackupContent` set to true (enabled). In case you would l
 - android:fullBackupContent="false"
 + android:fullBackupContent="true"
 ``` 
+3. Dependency injection: Dagger 2 (with dagger-android) has been set up. To start injecting activities, add a block similar but specific to your activity to `ActivityModule.kt` 
+```kotlin
+@ActivityScope
+@ContributesAndroidInjector
+fun provideMainActivity(): MainActivity
+```
 
 ### To Do
-- [ ] Set up Dagger, and Document
+- [X] Set up Dagger, and Document
 - [ ] Set up MVVM, and Document
+- [ ] Setup Room, and Document
