@@ -22,4 +22,4 @@ fun provideMainActivity(): MainActivity
 ### To Do
 - [X] Set up Dagger, and Document
 - [X] Set up MVVM
-- [ ] Setup Room, and Document
+- [X] Setup Room, and Document
