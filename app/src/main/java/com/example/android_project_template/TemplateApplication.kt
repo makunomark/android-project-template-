@@ -14,7 +14,12 @@ internal class TemplateApplication : Application(), HasAndroidInjector {
 
     override fun onCreate() {
         super.onCreate()
-        DaggerApplicationComponent.create().inject(this)
+
+        DaggerApplicationComponent
+            .builder()
+            .application(this)
+            .build()
+            .inject(this)
     }
 
     override fun androidInjector(): AndroidInjector<Any> {
