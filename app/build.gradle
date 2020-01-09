@@ -16,6 +16,14 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.incremental":"true"]
+            }
+        }
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
     }
     buildTypes {
         release {
@@ -27,7 +35,8 @@ android {
 
 ext {
     dagger = '2.24'
-    lifecycle = '1.1.1'
+    lifecycle_version = '2.1.0'
+    room_version = '2.2.3'
 }
 
 dependencies {
@@ -44,9 +53,12 @@ dependencies {
     kapt "com.google.dagger:dagger-android-processor:$dagger"
 
     // Lifecycle, LiveData and ViewModel
-    implementation "android.arch.lifecycle:runtime:$lifecycle"
-    implementation "android.arch.lifecycle:extensions:$lifecycle"
-    kapt "android.arch.lifecycle:compiler:$lifecycle"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
+    // Room Database
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
