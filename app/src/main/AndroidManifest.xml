@@ -3,7 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.android_project_template">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".TemplateApplication"
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +14,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name=".TemplateApplication"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".ui.main.view.MainActivity">
             <intent-filter>

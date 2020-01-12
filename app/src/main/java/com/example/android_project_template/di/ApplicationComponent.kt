@@ -2,10 +2,7 @@ package com.example.android_project_template.di
 
 import android.app.Application
 import com.example.android_project_template.TemplateApplication
-import com.example.android_project_template.di.modules.ActivityModule
-import com.example.android_project_template.di.modules.LocalDataStore
-import com.example.android_project_template.di.modules.ViewModelFactoryModule
-import com.example.android_project_template.di.modules.ViewModelModule
+import com.example.android_project_template.di.modules.*
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -18,7 +15,8 @@ import javax.inject.Singleton
         ActivityModule::class,
         ViewModelFactoryModule::class,
         ViewModelModule::class,
-        LocalDataStore::class
+        LocalDataStore::class,
+        RemoteDataStore::class
     ]
 )
 internal interface ApplicationComponent {

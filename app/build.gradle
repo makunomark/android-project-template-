@@ -18,12 +18,16 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = ["room.incremental":"true"]
+                arguments = ["room.incremental": "true"]
             }
         }
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
     }
     buildTypes {
         release {
@@ -36,7 +40,9 @@ android {
 ext {
     dagger = '2.24'
     lifecycle_version = '2.1.0'
-    room_version = '2.2.3'
+    lifecycle_ktx_version = '2.2.0-rc03'
+    room_version = '2.1.0-alpha04'
+    retrofit = '2.7.1'
 }
 
 dependencies {
@@ -54,11 +60,19 @@ dependencies {
 
     // Lifecycle, LiveData and ViewModel
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_ktx_version"
     kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
 
     // Room Database
     implementation "androidx.room:room-runtime:$room_version"
-    annotationProcessor "androidx.room:room-compiler:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-coroutines:$room_version"
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit"
+
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
