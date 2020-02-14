@@ -22,7 +22,5 @@ internal class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         mainViewModel = ViewModelProviders.of(this, viewModelFactory).get(MainViewModel::class.java)
-
-        mainViewModel.getRemoteCharacters()
     }
 }

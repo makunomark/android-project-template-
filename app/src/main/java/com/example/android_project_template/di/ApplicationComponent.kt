@@ -14,9 +14,7 @@ import javax.inject.Singleton
         AndroidInjectionModule::class,
         ActivityModule::class,
         ViewModelFactoryModule::class,
-        ViewModelModule::class,
-        LocalDataStore::class,
-        RemoteDataStore::class
+        ViewModelModule::class
     ]
 )
 internal interface ApplicationComponent {
