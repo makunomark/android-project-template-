@@ -33,8 +33,8 @@ internal class TemplateApplication : Application(), HasAndroidInjector {
     private fun initParseSdk() {
         Parse.initialize(
             Parse.Configuration.Builder(this)
-                .applicationId("abc34311-03e0-4545-8fd4-d1f07b476b06")
-                .server("https://np-server.herokuapp.com/parse")
+                .applicationId(BuildConfig.PARSE_SERVER_APP_ID)
+                .server(BuildConfig.PARSE_SERVER_URL)
                 .build()
         )
     }

@@ -33,6 +33,13 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            buildConfigField("String", "PARSE_SERVER_APP_ID", "\"" + PARSE_SERVER_APP_ID + "\"")
+            buildConfigField("String", "PARSE_SERVER_URL", "\"" + PARSE_SERVER_URL + "\"")
+        }
+        debug {
+            buildConfigField("String", "PARSE_SERVER_APP_ID", "\"" + PARSE_SERVER_APP_ID + "\"")
+            buildConfigField("String", "PARSE_SERVER_URL", "\"" + PARSE_SERVER_URL + "\"")
         }
     }
 }
