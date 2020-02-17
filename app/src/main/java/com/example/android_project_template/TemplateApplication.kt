@@ -6,6 +6,8 @@ import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
 import javax.inject.Inject
+import com.parse.Parse
+
 
 internal class TemplateApplication : Application(), HasAndroidInjector {
 
@@ -20,9 +22,20 @@ internal class TemplateApplication : Application(), HasAndroidInjector {
             .application(this)
             .build()
             .inject(this)
+
+        initParseSdk()
     }
 
     override fun androidInjector(): AndroidInjector<Any> {
         return dispatchingAndroidInjector
+    }
+
+    private fun initParseSdk() {
+        Parse.initialize(
+            Parse.Configuration.Builder(this)
+                .applicationId("abc34311-03e0-4545-8fd4-d1f07b476b06")
+                .server("https://np-server.herokuapp.com/parse")
+                .build()
+        )
     }
 }

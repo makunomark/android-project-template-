@@ -1,6 +1,7 @@
 package com.example.android_project_template.ui.main.view
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import com.example.android_project_template.R
@@ -22,5 +23,9 @@ internal class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         mainViewModel = ViewModelProviders.of(this, viewModelFactory).get(MainViewModel::class.java)
+    }
+
+    fun onLoginPressed(view: View) {
+        mainViewModel.login("username", "password")
     }
 }
