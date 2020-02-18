@@ -1,6 +1,11 @@
-## Android Project Template
+## Android Project Template - With Parse Branch
 
-The intention of this project is to be a template with the industry standard setup of code and libraries.
+This branch has been configured with the [Parse Platform Android SDK](https://github.com/parse-community/Parse-SDK-Android).
+
+## Parse Server
+
+For this project to run as intended, it needs configuration to an already running [Parse Server](https://github.com/parse-community/parse-server) instance. [This](https://github.com/makunomark/node-server-template) repository houses a bootstrapped server that would work with this branch out of the box. 
+Just initialize the parse instance in `TemplateApplication.kt` with the correct `PARSE_SERVER_URL` and `PARSE_SERVER_APP_ID` values by creating and updating the values in `gradle.properties`. 
 
 ### Things you should know
 1. Google App Indexing:
@@ -18,8 +23,3 @@ This template has `fullBackupContent` set to true (enabled). In case you would l
 @ContributesAndroidInjector
 fun provideMainActivity(): MainActivity
 ```
-
-### To Do
-- [X] Set up Dagger, and Document
-- [X] Set up MVVM
-- [X] Setup Room, and Document
