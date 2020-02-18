@@ -2,6 +2,12 @@
 
 The intention of this project is to be a template with the industry standard setup of code and libraries.
 
+## Project variations
+
+1. *You are here!* default([master](https://github.com/makunomark/android-project-template-)).
+1. parse([with-parse](https://github.com/makunomark/android-project-template-/tree/with-parse)).
+
+
 ### Things you should know
 1. Google App Indexing:
 I have disabled Google App Indexing, for really no reason. If you'd like to allow Google to crawl through your app content, please refer to this [stackoverflow.com](stackoverflow.com) [answer](https://stackoverflow.com/a/34368811/2760868)
@@ -18,8 +24,3 @@ This template has `fullBackupContent` set to true (enabled). In case you would l
 @ContributesAndroidInjector
 fun provideMainActivity(): MainActivity
 ```
-
-### To Do
-- [X] Set up Dagger, and Document
-- [X] Set up MVVM
-- [X] Setup Room, and Document
